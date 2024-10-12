@@ -6,5 +6,6 @@ import java.util.List;
 public interface ClinicServices {
     String createclinic(Clinic clinic);
     List<Clinic> readclinics();
-    // String UpdatePatient(Long patientId, Patient patient);
+    Clinic getClinicbyid(int id);
+    Clinic editclinic(Clinic clinic, int id);
 }

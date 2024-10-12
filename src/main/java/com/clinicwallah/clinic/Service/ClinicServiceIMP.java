@@ -1,5 +1,6 @@
 package com.clinicwallah.clinic.Service;
 
+import java.beans.Beans;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,28 @@ public class ClinicServiceIMP implements ClinicServices{
             clinics.add(clc);
         }
         return clinics;
+    }
+
+    @Override
+    public Clinic editclinic(Clinic clinic, int id) {
+        ClinicEntity exclc = clinicrepository.findById(id).get();
+        exclc.setClinicName(clinic.getClinicName());
+        exclc.setAddress(clinic.getAddress());
+        exclc.setContactNumber(clinic.getContactNumber());
+        exclc.setEmail(clinic.getEmail());
+        exclc.setSpecialization(clinic.getSpecialization());
+        exclc.setOpeningHours(clinic.getOpeningHours());
+
+        clinicrepository.save(exclc);
+        return clinic;
+    }
+
+    @Override
+    public Clinic getClinicbyid(int id) {
+        ClinicEntity clinicEntity = clinicrepository.findById(id).get();
+        Clinic clinic = new Clinic();
+        BeanUtils.copyProperties(clinicEntity, clinic);
+        return clinic;
     }
 
     // @Override
