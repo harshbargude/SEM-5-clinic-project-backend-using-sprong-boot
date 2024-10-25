@@ -29,13 +29,5 @@ public class PatientEntity {
     private String medicalHistory;
     private String currentIllness;
 
-    @ManyToMany
-    @JoinTable(
-        name = "patient_doctor",
-        joinColumns = @JoinColumn(name = "patient_id"),
-        inverseJoinColumns = @JoinColumn(name = "doctor_id"))
-    private List<DoctorEntity> doctors;
-
-    @OneToMany(mappedBy = "patient")
-    private List<AppointmentEntity> appointments;
+    
 }

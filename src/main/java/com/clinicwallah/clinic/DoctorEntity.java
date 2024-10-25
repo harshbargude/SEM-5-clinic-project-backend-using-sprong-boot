@@ -25,14 +25,9 @@ public class DoctorEntity {
     private int experienceYears;
     private String contactNumber;
     private String email;
+    private int clinicId;
 
-    @ManyToOne
-    @JoinColumn(name = "clinic_id")
-    private ClinicEntity clinic;
+    
 
-    @OneToMany(mappedBy = "doctor")
-    private List<AppointmentEntity> appointments;
-
-    @ManyToMany(mappedBy = "doctors")
-    private List<PatientEntity> patients;
+    
 }

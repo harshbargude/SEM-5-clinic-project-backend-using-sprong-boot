@@ -25,7 +25,5 @@ public class AppointmentEntity {
 
     private String doctor;
 
-    @ManyToOne
-    @JoinColumn(name = "clinic_id")
-    private ClinicEntity clinic;
+    
 }

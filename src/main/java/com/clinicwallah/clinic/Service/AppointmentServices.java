@@ -19,5 +19,4 @@ public interface AppointmentServices {
 
     // Delete an appointment by ID
     String deleteAppointment(int appointmentId);
-    
 }

@@ -20,8 +20,5 @@ public class Clinic {
     private String specialization;
     private String openingHours;
     
-    private List<Doctor> doctors;
-
-    private List<Appointment> appointments;
     
 }

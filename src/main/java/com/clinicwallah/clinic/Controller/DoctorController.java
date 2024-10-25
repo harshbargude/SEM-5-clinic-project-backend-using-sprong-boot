@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clinicwallah.clinic.Doctor;
+import com.clinicwallah.clinic.DoctorEntity;
 import com.clinicwallah.clinic.Service.DoctorService;
 
 @RestController
@@ -36,6 +37,11 @@ public class DoctorController {
     @GetMapping("/doctor")
     public ResponseEntity<List<Doctor>> getAllDoctors() {
         List<Doctor> doctors = doctorService.ReadDoctors();
+        return ResponseEntity.ok(doctors);
+    }
+    @GetMapping("/doctor/clinic/{id}")
+    public ResponseEntity<List<DoctorEntity>> getAllDoctorswithClinicId(@PathVariable("id") int clinicId) {
+        List<DoctorEntity> doctors = doctorService.getAllDoctorswithClinicId(clinicId);
         return ResponseEntity.ok(doctors);
     }
 }

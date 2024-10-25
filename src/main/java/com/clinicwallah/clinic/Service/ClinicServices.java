@@ -8,4 +8,5 @@ public interface ClinicServices {
     List<Clinic> readclinics();
     Clinic getClinicbyid(int id);
     Clinic editclinic(Clinic clinic, int id);
+    String deleteClinic(int id);
 }

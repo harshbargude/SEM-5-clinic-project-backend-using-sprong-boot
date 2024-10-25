@@ -66,6 +66,15 @@ public class ClinicServiceIMP implements ClinicServices{
         return clinic;
     }
 
+    @Override
+    public String deleteClinic(int id) {
+        if(clinicrepository.existsById(id)){
+            clinicrepository.deleteById(id);
+            return "Clinic Deleted successfully!";
+        }
+        return "Clinic not found!";
+    }
+
     // @Override
     // public List<Clinic> readClinics() {
     //     List<ClinicEntity> clinicList = clinicrepository.findAll();
@@ -84,5 +93,6 @@ public class ClinicServiceIMP implements ClinicServices{
     //     return clinics;
     // }
 
+    
     
 }

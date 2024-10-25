@@ -22,7 +22,5 @@ public class Patient {
     private String medicalHistory;
     private String currentIllness;
 
-    private List<Doctor> doctors;
-
-    private List<Appointment> appointments;
+    
 }

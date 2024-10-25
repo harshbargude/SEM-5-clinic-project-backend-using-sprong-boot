@@ -19,9 +19,7 @@ public class Doctor {
     private String contactNumber;
     private String email;
 
-    private Clinic clinic;
+    private int clinicId;
 
-    private List<Appointment> appointments;
-    
-    private List<Patient> patients;
+
 }

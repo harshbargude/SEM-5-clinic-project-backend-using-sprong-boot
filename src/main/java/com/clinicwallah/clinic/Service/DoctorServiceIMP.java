@@ -46,9 +46,15 @@ public class DoctorServiceIMP implements DoctorService{
             ndoctor.setExperienceYears(doctorEntity.getExperienceYears());
             ndoctor.setContactNumber(doctorEntity.getContactNumber());
             ndoctor.setEmail(doctorEntity.getEmail());
+            ndoctor.setClinicId(doctorEntity.getClinicId());
             doctor.add(ndoctor);
         }
         return doctor;
+    }
+
+    @Override
+    public List<DoctorEntity> getAllDoctorswithClinicId(int clinicId) {
+        return doctorRepository.findByClinicId(clinicId);
     }
     
 }
